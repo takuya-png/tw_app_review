@@ -22,6 +22,9 @@ class PostsController < ApplicationController
     end
   end
 
+  def show
+  end
+  
   def edit
   end
 
@@ -39,16 +42,16 @@ class PostsController < ApplicationController
   end
 
   def confirm
-    @post = post.new(post_params)
+    @post = Post.new(post_params)
     render :new if @post.invalid?
   end
 
   private
   def post_params
-    params.require(:post).permit(:title, :content)
+    params.require(:post).permit(:content)
   end
 
   def set_post
-    @post = post.find(params[:id])
+    @post = Post.find(params[:id])
   end
 end
