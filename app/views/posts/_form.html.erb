@@ -10,9 +10,8 @@
     </div>
   <% end %>
   <div class="post_content">
-    <%= form.label :content %>
     <%= form.text_field :content %>
   </div>
-  <%= form.submit name = "投稿する" %>
+  <%= form.submit "投稿する" %>
 <% end %>
-<%= link_to "投稿一覧画面にもどる", posts_path %>
+<%= link_to "一覧画面に戻る", posts_path %>
